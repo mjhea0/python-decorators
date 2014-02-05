@@ -1,29 +1,29 @@
 ## Primer on Python Decorators
 
-Decorators are a form of Python metaprogramming, using functions to manipulate code. 
+Decorators are a form of Python metaprogramming, using functions to manipulate code. **In this introductory tutorial, we'll look at what decorators are and how to create and use them.**
 
 > You can find all the examples from this article [here](https://github.com/mjhea0/python-decorators).
 
 ### Before you can understand decorators, you must first understand:
 
 1. How functions work. Essentially, **functions return a value based on the given arguments**.
+  
   ```python
   def foo(bar):
       return bar + 1
-
 
   print foo(2) == 3
   ```
 
 
 2. In Python, functions are **[first-class](http://python-history.blogspot.com/2009/02/first-class-everything.html) objects**. This means that functions can be passed around, and used as arguments, just like any other value (e.g, string, int, float).
+  
   ```python
   def foo(bar):
       return bar + 1
 
   def baz(qux):
       return qux + 1
-
 
   num = foo(2)
   print baz(num) == 4
@@ -34,18 +34,19 @@ Decorators are a form of Python metaprogramming, using functions to manipulate c
   ```
 
 3. Because of the first-class nature of functions in Python, you can **define functions inside other functions**. Such functions are called nested functions.
+  
   ```python
   def parent():
-    print "Printing from the parent() function."
+      print "Printing from the parent() function."
 
-    def first_child():
-        return "Printing from the first_child() function."
+      def first_child():
+          return "Printing from the first_child() function."
 
-    def second_child():
-        return "Printing from the second_child() function."
+      def second_child():
+          return "Printing from the second_child() function."
 
-    print first_child()
-    print second_child()
+      print first_child()
+      print second_child()
   ```
 
   What happens when you call the `parent()` function? Think about this for a minute. You should get ...
@@ -71,6 +72,7 @@ Decorators are a form of Python metaprogramming, using functions to manipulate c
   because of scope, both of the sibling functions are not available (e.g., cannot be called) outside of the parent function.
 
 4. Python also allows you to **return functions from other functions**. Let's alter the previous function for this example.
+  
   ```python
   def parent(num):
 
@@ -118,6 +120,7 @@ Decorators are a form of Python metaprogramming, using functions to manipulate c
 ## Now, my friend, you are ready to take on decorators! Let's look at two examples:
 
 1. Example 1:
+  
   ```python
   def my_decorator(some_function):
 
@@ -148,11 +151,12 @@ Decorators are a form of Python metaprogramming, using functions to manipulate c
   Something is happening after some_function() is called.
   ```
 
-  To understand what's going on here, just look back at the four previous examples. We are literally just applying everything learned. Put simply, decorators wrap a function, modifying its behavior.
+  To understand what's going on here, just look back at the four previous examples. We are literally just applying everything learned. **Put simply, decorators wrap a function, modifying its behavior.**
 
   Let's take it one step further and add an if statement.
 
 2. Example 2:
+  
   ```python
   def my_decorator(some_function):
 
@@ -222,7 +226,7 @@ Python allows you to simplify the calling of decorators using the `@` symbol:
 
   @my_decorator
   def just_some_function():
-     print "Wheee!"
+      print "Wheee!"
 
   just_some_function()
   ```
@@ -266,5 +270,3 @@ Python allows you to simplify the calling of decorators using the `@` symbol:
   Run it. Work through the code, line by line. Make sure you understand how it works.
 
   Cheers!
-
-
