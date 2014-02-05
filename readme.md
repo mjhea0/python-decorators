@@ -261,9 +261,9 @@ Python allows you to simplify the calling of decorators using the `@` symbol:
   print my_function()
   ```
 
-  This returns the time before you run the function as well as the time after. Then we simply subtract the two to see how long it took to run the function.
+  This returns the time before you run `my_function()` as well as the time after. Then we simply subtract the two to see how long it took to run the function.
 
-  Run the function. Work through the code, line by line. Make sure you understand how it works.
+  Run it. Work through the code, line by line. Make sure you understand how it works.
 
   Cheers!
 
