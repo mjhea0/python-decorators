@@ -68,7 +68,7 @@ Decorators are a form of Python metaprogramming, using functions to manipulate c
   What have we learned?
 
   Whenever you call `parent()`, the sibling functions, `first_child()` and `second_child()` are also called *AND* 
-  beacuse of scope, both of the sibling functions are not available (e.g., cannot be called) outside of the parent function.
+  because of scope, both of the sibling functions are not available (e.g., cannot be called) outside of the parent function.
 
 4. Python also allows you to return functions from other functions. Let's alter the previous function for this example.
   ```python
@@ -112,7 +112,7 @@ Decorators are a form of Python metaprogramming, using functions to manipulate c
   Printing from the second_child() function.
   ```
 
-  Finally, did you notice that in example three, we excuted the sibling functions within the parent functions - e.g, `second_child()`. Meanwhile in this last example, we did not add parenthesis to the sibling functions - `first_child` - when called so that way we can use them in the future. Make sense?
+  Finally, did you notice that in example three, we executed the sibling functions within the parent functions - e.g, `second_child()`. Meanwhile in this last example, we did not add parenthesis to the sibling functions - `first_child` - when called so that way we can use them in the future. Make sense?
 
   
 ## Now, my friend, you are ready to take on decorators! Let's look at two examples:
@@ -148,7 +148,7 @@ Decorators are a form of Python metaprogramming, using functions to manipulate c
   Something is happening after some_function() is called.
   ```
 
-  To understand what's going on here, just look back at the four prevous examples. We are literally just applying everything learned. Put simply, decorators wrap a function, modifying its behavior.
+  To understand what's going on here, just look back at the four previous examples. We are literally just applying everything learned. Put simply, decorators wrap a function, modifying its behavior.
 
   Let's take it one step further and add an if statement.
 
@@ -187,9 +187,9 @@ Decorators are a form of Python metaprogramming, using functions to manipulate c
   Something is happening after some_function() is called.
   ```
 
-## Time for some syntatic sugar!
+## Time for some syntactic sugar!
 
-Python allows you to simplfy the calling of decorators using the `@` symbol:
+Python allows you to simplify the calling of decorators using the `@` symbol:
 
 1. Let's create a module for our decorator:
 
