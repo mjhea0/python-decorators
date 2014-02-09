@@ -1,13 +1,11 @@
 def foo(bar):
- return bar + 1
+    return bar+1
 
-def baz(qux):
-  return qux + 1
+print foo
+print foo(2)
+print type(foo)
 
+def call_foo_with_arg(foo, arg):
+	return foo(arg)
 
-num = foo(2)
-print baz(num) == 4
-
-# OR #
-
-print baz(foo(2)) == 4
+print call_foo_with_arg(foo, 3)
