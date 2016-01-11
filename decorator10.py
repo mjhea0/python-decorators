@@ -1,24 +1,17 @@
-from time import sleep
+from functools import wraps
+from flask import g, request, redirect, url_for
 
 
-def sleep_decorator(function):
-
-    """
-    Limits how fast the function is
-    called.
-    """
-
-    def wrapper(*args, **kwargs):
-        sleep(2)
-        return function(*args, **kwargs)
-    return wrapper
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if g.user is None:
+            return redirect(url_for('login', next=request.url))
+        return f(*args, **kwargs)
+    return decorated_function
 
 
-@sleep_decorator
-def print_number(num):
-    return num
-
-print print_number(222)
-
-for x in range(1,6):
-    print print_number(x)
+@app.route('/secret')
+@login_required
+def secret():
+    pass

@@ -15,8 +15,8 @@ def parent(num):
 foo = parent(10)
 bar = parent(11)
 
-print foo
-print bar
+print(foo)
+print(bar)
 
-print foo()
-print bar()
+print(foo())
+print(bar())
